@@ -1,27 +1,31 @@
 
 
 var pessoa = {}
-var passos = ["Nome", "Idade", "Profissão", "Estado Civil", "Escolaridade"];
+var itens = ["Nome", "Idade", "Profissão", "Estado Civil", "Escolaridade"];
+var i = 0;
 
-var i = 1;
 
 $("#salvar").on('click', function() {
-		
-	$(".campoDeTexto").attr({
-		id: passos[i],
-		placeholder: passos[i]
-	});;
-	
-	var item = passos[i];
-	console.log(item);
-	pessoa[i]  = $(".campoDeTexto").val();
+	salvar(itens[i]);
 
+	$(".campoDeTexto").attr({
+		id: itens[i],
+		placeholder: itens[i]
+	});
+		
 	incrementar(i);
 
+	$('.campoDeTexto').val('');
 });
+
+
+function salvar(item){
+	pessoa[item] =  $('.campoDeTexto').val();
+}
 
 
 function incrementar(){
 	i++;
 }
 
+ 
