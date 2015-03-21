@@ -1,5 +1,7 @@
 
 body {
+    margin: 0;
+    paddind: 0;
     background: #fafafa;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #555;
@@ -34,3 +36,27 @@ input[type="submit"]{
     width: 100px;
     height: 45px;
 }
+
+#status{
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    background: #ccc;
+
+    div{
+        background: red;
+        height: 10px;
+        width: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
