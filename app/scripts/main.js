@@ -1,8 +1,10 @@
 
+
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "renda"];
 var totalDeItens = itens.length;
 var i = 0;
+
 
 $("#salvar").on('click', function() {
 	salvar(itens[i]);

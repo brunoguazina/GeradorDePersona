@@ -1,5 +1,26 @@
 $corPadrao: #aa1111;
 
+
+::-webkit-input-placeholder {
+   color: black;
+   font-size: 18px;
+   line-height: .8;
+   text-transform: uppercase;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: black;  
+   font-size: 18px;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black;  
+   font-size: 18px;
+}
+:-ms-input-placeholder {  
+   color: black; 
+   font-size: 18px;
+}
+
+
 body {
     margin: 0;
     paddind: 0;
@@ -35,6 +56,9 @@ input[type="text"]{
     padding: 0 10px 0 10px;
     width: 475px;
     height: 50px;
+    font-size: 18px;
+   line-height: .8;
+   text-transform: uppercase;
 }
 
 button{
