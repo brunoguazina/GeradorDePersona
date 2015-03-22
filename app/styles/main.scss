@@ -1,3 +1,4 @@
+$corPadrao: #aa1111;
 
 body {
     margin: 0;
@@ -8,14 +9,16 @@ body {
 }
 
 .conteudo {
-    margin: 50px auto 0 auto;
-    max-width: 990px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -300px;
+    width: 600px;
     font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
     background-color: #eee;
     border-radius: 6px;
-    padding: 60px;
+    padding: 20px;
     
     h1 {
         font-size: 60px;
@@ -27,15 +30,23 @@ body {
 
 
 input[type="text"]{
-    width: 400px;
-    height: 45px;
+    vertical-align: top;
+    border: none;
+    padding: 0 10px 0 10px;
+    width: 475px;
+    height: 50px;
 }
 
-input[type="submit"]{
-    padding: 25px 0;
+button{
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    vertical-align: top;
     width: 100px;
-    height: 45px;
+    height: 50px;
 }
+
 
 #status{
     width: 100%;
@@ -45,7 +56,7 @@ input[type="submit"]{
     background: #ccc;
 
     div{
-        background: red;
+        background: $corPadrao;
         height: 100%;
         width: 0;
     }

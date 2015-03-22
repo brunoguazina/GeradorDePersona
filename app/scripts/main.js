@@ -29,7 +29,6 @@ function tratarMensagem(item) {
 }
 
 function status() {
-	
 	var valorDeCadaItem = i/totalDeItens;
 	var resultado = valorDeCadaItem*100;
 	$("div#quantidade").css( "width", resultado + "%");
