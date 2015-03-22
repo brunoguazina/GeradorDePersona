@@ -17,6 +17,9 @@ $("#salvar").on('click', function() {
 	
 	$("#valorItens").val("");
 	status();
+
+	//TODO: ajustar a posicao inicial 
+	$("#status").html(i +"/"+ totalDeItens)
 });
 
 function salvar(item){
