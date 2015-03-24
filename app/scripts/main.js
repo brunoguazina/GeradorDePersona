@@ -5,8 +5,15 @@ var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "ren
 var totalDeItens = itens.length;
 var i = 0;
 
+$("#voltar").on('click', function() {
+	decrementar();
+	tratarMensagem(itens[i -1]);
+	$("#valorItens").val(itens[i +1]);
+	status();
+});
 
-$("#salvar").on('click', function() {
+
+$("#avancar").on('click', function() {
 	salvar(itens[i]);
 	tratarMensagem(itens[i +1]);
 	
@@ -15,12 +22,13 @@ $("#salvar").on('click', function() {
 		incrementar();
 	} else {
 		i = 0;
+		alert("Gerar persona");
 	}
 	
 	$("#valorItens").val("");
 	status();
 
-	//TODO: ajustar a posicao inicial 
+	//TODO: ajustar a posicao inicial
 	$("#status").html(i +"/"+ totalDeItens)
 });
 
@@ -41,4 +49,7 @@ function status() {
 
 function incrementar() {
 	i++;
+}
+function decrementar() {
+	i --;
 }
