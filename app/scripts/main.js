@@ -22,7 +22,13 @@ $("#voltar").on('click', function() {
 
 $("#avancar").on('click', function() {
 	salvar(itens[i]);
-	incrementar();
+	
+	if (i < totalDeItens){
+		incrementar();
+	} else {
+		console.log(pessoa);
+	}
+
 	tratarMensagem(itens[i]);
 	$("#valorItens").val("");
 	status();
