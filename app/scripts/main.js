@@ -5,11 +5,8 @@ var totalDeItens = itens.length;
 var i = 0;
 
 
-
-
 $("#status").html(i +"/"+ totalDeItens)
-
-
+$("#valorItens").focus();
 
 
 $("#voltar").on('click', function() {
@@ -18,6 +15,7 @@ $("#voltar").on('click', function() {
 	pegarValor(itens[i]);
 	status();
 	$("#status").html(i +"/"+ totalDeItens)
+	$("#valorItens").focus();
 });
 
 $("#avancar").on('click', function() {
@@ -32,8 +30,8 @@ $("#avancar").on('click', function() {
 	tratarMensagem(itens[i]);
 	$("#valorItens").val("");
 	status();
-	//TODO: ajustar a posicao inicial
 	$("#status").html(i +"/"+ totalDeItens)
+	$("#valorItens").focus();
 });
 
 
