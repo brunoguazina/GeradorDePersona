@@ -1,39 +1,43 @@
 
-
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "renda"];
 var totalDeItens = itens.length;
 var i = 0;
 
+
+
+
+$("#status").html(i +"/"+ totalDeItens)
+
+
+
+
 $("#voltar").on('click', function() {
 	decrementar();
-	tratarMensagem(itens[i -1]);
-	$("#valorItens").val(itens[i +1]);
+	tratarMensagem(itens[i]);
+	pegarValor(itens[i]);
 	status();
+	$("#status").html(i +"/"+ totalDeItens)
 });
-
 
 $("#avancar").on('click', function() {
 	salvar(itens[i]);
-	tratarMensagem(itens[i +1]);
-	
-	
-	if(i < totalDeItens){
-		incrementar();
-	} else {
-		i = 0;
-		alert("Gerar persona");
-	}
-	
+	incrementar();
+	tratarMensagem(itens[i]);
 	$("#valorItens").val("");
 	status();
-
 	//TODO: ajustar a posicao inicial
 	$("#status").html(i +"/"+ totalDeItens)
 });
 
+
+function pegarValor(item) {
+	console.log(pessoa[item]);
+	$("#valorItens").val(pessoa[item]);
+}
+
 function salvar(item){
-	pessoa[item] =  $("#valorItens").val();
+	pessoa[item] = $("#valorItens").val();
 }
 
 function tratarMensagem(item) {
@@ -44,12 +48,13 @@ function tratarMensagem(item) {
 function status() {
 	var valorDeCadaItem = i/totalDeItens;
 	var resultado = valorDeCadaItem*100;
-	$("div#quantidade").css( "width", resultado + "%");
+	$("#quantidade").css( "width", resultado + "%");
 }
 
 function incrementar() {
 	i++;
 }
+
 function decrementar() {
-	i --;
+	i--;
 }
