@@ -1,5 +1,5 @@
 $corPadrao: #aa1111;
-
+$corSecundaria: #324e61;
 
 ::-webkit-input-placeholder {
    color: black;
@@ -25,15 +25,17 @@ body {
     margin: 0;
     paddind: 0;
     background-image: url("../image/background.jpg");
-    background-size: 80%;
+    background-size: 85%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #555;
 }
 
-h1 {
+h1 {    
+    color: #324e61;
+    font-family: impact;
         text-transform: uppercase;
         text-align: center;
-        font-size: 60px;
+        font-size: 90px;
         line-height: 1;
         letter-spacing: -1px;
 }
@@ -58,13 +60,11 @@ input[type="text"]{
     width: 500px;
     height: 60px;
     font-size: 18px;
-   line-height: .8;
-   text-transform: uppercase;
-
-    box-shadow: 5px 5px 5px -4px #242424;
-    -webkit-box-shadow: 5px 5px 5px -4px #242424;
-    -moz-box-shadow: 5px 5px 5px -4px #242424;
-    -o-box-shadow: 5px 5px 5px -4px #242424;
+    line-height: .8;
+    text-transform: uppercase;
+    border-radius: 7px;
+    
+    box-shadow: 0px 3px 5px -5px #242424;
 }
 
 button{
@@ -72,7 +72,7 @@ button{
     background: transparent;
     color: $corPadrao;
     border: none;
-    font-size: 26px;
+    font-size: 24px;
     vertical-align: top;
     width: 100px;
     height: 60px;
@@ -84,7 +84,7 @@ button{
     height: 3px;
     position: absolute;
     top: 0;
-    background: #ccc;
+    background: transparentize($corSecundaria, .5);
 
     div{
         background: $corPadrao;

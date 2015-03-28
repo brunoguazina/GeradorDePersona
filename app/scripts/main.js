@@ -11,7 +11,9 @@ var i = 0;
 
 
 	$("#voltar").on('click', function() {
-		decrementar();
+		if(i > 0) {
+			decrementar();	
+		}
 		tratarMensagem(itens[i]);
 		pegarValor(itens[i]);
 		status();
