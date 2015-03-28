@@ -23,8 +23,8 @@ $("#avancar").on('click', function() {
 	
 	if (i < totalDeItens){
 		incrementar();
-	} else {
-		console.log(pessoa);
+	} if (i == totalDeItens) {
+		$(".persona").html(pessoa.nome);
 	}
 
 	tratarMensagem(itens[i]);
