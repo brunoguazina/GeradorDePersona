@@ -9,7 +9,6 @@ var i = 0;
 	$("#status").html(i +"/"+ totalDeItens)
 	$("#valorItens").focus();
 
-
 	$("#voltar").on('click', function() {
 		if(i > 0) {
 			decrementar();	
