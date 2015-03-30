@@ -14,25 +14,34 @@ $corSecundaria: #324e61;
 
 }
 
-::-webkit-input-placeholder {
-   color: black;
-   font-size: 18px;
-   line-height: .8;
-   text-transform: uppercase;
-}
-:-moz-placeholder { /* Firefox 18- */
-   color: black;  
-   font-size: 18px;
-}
-::-moz-placeholder {  /* Firefox 19+ */
-   color: black;  
-   font-size: 18px;
-}
-:-ms-input-placeholder {  
-   color: black; 
-   font-size: 18px;
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+ {
+    color: black;
+    font-size: 18px;
+    line-height: .8;
+    text-transform: uppercase;
 }
 
+.dialogo {
+    position: fixed;
+    background-color: transparentize(#555, .4%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+
+    .listaDePersonas {
+        position: relative;
+        background-color: #fff;
+        margin: 100px auto 0 auto;
+        width: 650px;
+        height: 450px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 5px -5px #242424;
+    }
+}
 
 body {
     margin: 0;
@@ -51,29 +60,45 @@ body {
 }
 
 h1 {    
-        position: absolute;
-        color: #324e61;
-        font-family: impact;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 105px;
-        line-height: 1;
-        letter-spacing: -6px;
-        width: 100%;
+    position: absolute;
+    color: #324e61;
+    font-family: impact;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 105px;
+    line-height: 1;
+    letter-spacing: -6px;
+    width: 100%;
+    z-index: 7777;
 }
+
 h2 {
-        position: absolute;
-        color: $corPadrao;
-        font-family: 'djb_almost_perfectregular';;
-        font-size: 42px;
-        line-height: 1;
-        bottom: -30px;
-        right: 50px;
-        
-        text-shadow: 0px 1px 2px #242424;
-        -ms-transform: rotate(-8deg); /* IE 9 */
-        -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
-        transform: rotate(-8deg);  
+    position: absolute;
+    color: $corPadrao;
+    font-family: 'djb_almost_perfectregular';;
+    font-size: 42px;
+    line-height: 1;
+    bottom: -30px;
+    right: 50px;
+    z-index: 8888;
+
+    text-shadow: 0px 1px 2px #242424;
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
+    transform: rotate(-8deg);  
+}
+
+h3 {    
+    color: #324e61;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: -1px;
+    line-height: 1;
+    width: 100%;
+    padding: 25px 0;
+    margin: 0;
+    z-index: 7777;
 }
 
 .conteudo {
@@ -99,7 +124,7 @@ input[type="text"]{
     box-shadow: 0px 3px 5px -5px #242424;
 }
 
-button{
+button {
     cursor: pointer;
     background: transparent;
     color: $corPadrao;
@@ -111,15 +136,14 @@ button{
     height: 60px;
 }
 
-
-#feedback{
+#feedback {
     width: 100%;
     height: 3px;
     position: absolute;
     top: 0;
     background: transparentize($corSecundaria, .5);
 
-    div{
+    #barraDeProgresso {
         background: $corPadrao;
         height: 100%;
         width: 0;
@@ -127,7 +151,17 @@ button{
 
 }
 
-#status{
+.fecharDialogo {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: $corPadrao;
+    color: #fff;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+
+#status {
     margin: 20px 0 0 0;
     font-size: 12px;
     text-align: right;

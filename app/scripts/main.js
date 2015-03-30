@@ -1,4 +1,3 @@
-//
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "renda"];
 var totalDeItens = itens.length;
@@ -10,32 +9,36 @@ var i = 0;
 	$("#valorItens").focus();
 
 	$("#voltar").on('click', function() {
+		salvar(itens[i]);
+
 		if(i > 0) {
-			decrementar();	
+			decrementar();
 		}
+
 		tratarMensagem(itens[i]);
 		pegarValor(itens[i]);
 		status();
-		$("#status").html(i +"/"+ totalDeItens)
 		$("#valorItens").focus();
 	});
 
 	$("#avancar").on('click', function() {
 		salvar(itens[i]);
-		
+
 		if (i < totalDeItens){
 			incrementar();
-		} if (i == totalDeItens) {
-			$(".persona").append(pessoa.nome + " - " + pessoa.profissão);
+		} if (i === totalDeItens) {
+			$(".dialogo").show();
+			$(".persona, .diagogo").empty().append(pessoa.nome + " - " + pessoa.profissão);
 		}
-
 		tratarMensagem(itens[i]);
 		$("#valorItens").val("");
 		status();
-		$("#status").html(i +"/"+ totalDeItens)
 		$("#valorItens").focus();
 	});
 
+	$(".fecharDialogo").on('click', function() {
+		$(".dialogo").toggle();
+	});
 
 	function pegarValor(item) {
 		console.log(pessoa[item]);
@@ -53,8 +56,8 @@ var i = 0;
 
 	function status() {
 		var valorDeCadaItem = i/totalDeItens;
-		var resultado = valorDeCadaItem*100;
-		$("#quantidade").css( "width", resultado + "%");
+		var resultado = valorDeCadaItem * 100;
+		$("#barraDeProgresso").css( "width", resultado + "%");
 	}
 
 	function incrementar() {

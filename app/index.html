@@ -17,15 +17,24 @@
 
   </head>
   <body>
+    
+    <div class="dialogo" style="display: none;">
+        <div class="listaDePersonas">
+            <span class="fecharDialogo">x</span>
+            <h3>Selecione um template</h3>
+            <p class="persona"></p>
+        </div>
+    </div>
+
     <div id="feedback">
-      <div id="quantidade"></div>
+      <div id="barraDeProgresso"></div>
     </div>
     
     <div class="logo">
         <h1>Persona</h1>
         <h2>generator</h2>
     </div>
-    
+
     <div class="conteudo">
 
     <div id="campos">
@@ -33,9 +42,8 @@
       <button id="voltar">voltar</button>
       <input type="text" class="campoDeTexto" id="valorItens" data-indice="1" placeholder="Nome">
       <button id="avancar">avançar</button>
-      <div id="status"> </div>
     </div>
-    <div class="persona"></div>
+    
     </div>
 
     <script>
