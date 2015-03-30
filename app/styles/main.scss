@@ -32,14 +32,29 @@ $corSecundaria: #324e61;
     height: 100%;
     z-index: 9999;
 
-    .listaDePersonas {
+    .conteudoDoDialogo {
         position: relative;
         background-color: #fff;
         margin: 100px auto 0 auto;
+        padding: 5px;
         width: 650px;
         height: 450px;
         border-radius: 10px;
         box-shadow: 0px 3px 5px -5px #242424;
+    }
+}
+
+.listaDePersonas {
+    padding: 0;
+
+    .persona {
+        cursor: pointer;
+        display: inline-table;
+        list-style: none;
+        width: 24.6%;
+        height: 150px;
+        margin: 2px 0; 
+        background-color: #ccc;
     }
 }
 

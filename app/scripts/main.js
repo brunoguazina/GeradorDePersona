@@ -28,7 +28,7 @@ var i = 0;
 			incrementar();
 		} if (i === totalDeItens) {
 			$(".dialogo").show();
-			$(".persona, .diagogo").empty().append(pessoa.nome + " - " + pessoa.profissão);
+			$(".nomePersona").empty().append(pessoa.nome + " - " + pessoa.profissão);
 		}
 		tratarMensagem(itens[i]);
 		$("#valorItens").val("");
