@@ -51,10 +51,15 @@ $corSecundaria: #324e61;
         cursor: pointer;
         display: inline-table;
         list-style: none;
-        width: 24.6%;
+        width: 23%;
         height: 150px;
         margin: 2px 0; 
         background-color: #ccc;
+        border: 5px solid transparent;
+
+        &:hover {
+            border: 5px solid $corPadrao;
+        }
     }
 }
 
