@@ -7,7 +7,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('styles', function () {
-  return gulp.src('app/styles/main.scss')
+  return gulp.src('app/styles/**/*')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       outputStyle: 'nested', // libsass doesn't support expanded yet
@@ -19,16 +19,8 @@ gulp.task('styles', function () {
       require('autoprefixer-core')({browsers: ['last 1 version']})
     ]))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('dist/styles'))
     .pipe(reload({stream: true}));
-});
-
-gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 gulp.task('html', ['styles'], function () {
@@ -64,6 +56,11 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('scripts', function() {
+  return gulp.src('app/scripts/**/*')
+  .pipe(gulp.dest('dist/scripts'));
+});
+
 gulp.task('extras', function () {
   return gulp.src([
     'app/*.*',
@@ -90,7 +87,6 @@ gulp.task('serve', ['styles', 'fonts'], function () {
   // watch for changes
   gulp.watch([
     'app/*.html',
-    'app/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -117,7 +113,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'styles', 'scripts', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

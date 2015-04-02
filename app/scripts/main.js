@@ -1,3 +1,4 @@
+'use strict';
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade"];
 var totalDeItens = itens.length;

@@ -66,7 +66,7 @@ $corSecundaria: #324e61;
 body {
     margin: 0;
     paddind: 0;
-    background-image: url("../image/background.jpg");
+    background-image: url("../images/background.jpg");
     background-size: 85%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #555;
@@ -122,7 +122,10 @@ h3 {
 }
 
 p {
+    font-size: 20px;
     text-align: center;
+    color: $corSecundaria;
+    text-transform: uppercase;
 }
 
 .conteudo {
