@@ -1,4 +1,4 @@
-'use strict';
+
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade"];
 var totalDeItens = itens.length;
@@ -6,8 +6,7 @@ var i = 0;
 
 (function(){
 	"use strict";
-	
-	$("#status").html(i +"/"+ totalDeItens)
+		
 	$("#valorItens").focus();
 
 	$("#voltar").on('click', function() {
