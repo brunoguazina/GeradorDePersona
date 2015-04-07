@@ -41,6 +41,20 @@ var i = 0;
 		$(".dialogo").toggle();
 	});
 
+	$(".persona").on("click", function(){
+		window.location.pathname = "persona.html";
+		
+	});
+
+	function montarPersona(){
+         $(".nome").html("Some text and markup");
+      }
+
+	$( document ).ready(function() {
+        $(".nome").html("Bruno Guazina");
+        $(".profissao").html(pessoa.profissao);
+    });
+
 	function pegarValor(item) {
 		console.log(pessoa[item]);
 		$("#valorItens").val(pessoa[item]);
