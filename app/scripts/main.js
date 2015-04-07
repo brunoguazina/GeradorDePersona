@@ -1,8 +1,41 @@
 
-var pessoa = {}
+var pessoa = "";
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade"];
 var totalDeItens = itens.length;
 var i = 0;
+
+var pessoas = "";
+
+
+$(window).load(function() {
+
+	if (localStorage.getItem("Pessoas") == null) {
+		localStorage.setItem( "Pessoas" ,JSON.stringify([]));
+	}
+	pessoas = JSON.parse(localStorage.getItem("Pessoas"));
+	listar(pessoas);
+	return pessoas;
+});
+
+
+$("#avancar").on("click", function() {
+
+	var pessoa = {
+		nome: $("#nome").val(),
+		idade: $("#idade").val(),
+		profissao: $("#profissao").val(),
+	};
+
+	salvar(pessoa);
+});
+
+
+function salvar(pessoa) {
+	pessoas.push(pessoa);
+	localStorage.setItem( "Pessoas" ,JSON.stringify(pessoas));
+	location.reload();
+}
+
 
 (function(){
 	"use strict";
