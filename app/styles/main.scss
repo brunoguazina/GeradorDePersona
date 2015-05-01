@@ -122,15 +122,15 @@ h3 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     color: $corSecundaria;
     text-transform: uppercase;
 }
 
 .conteudo {
-    width: 990px;
-    margin: 8% auto 0 auto;
+    width: 800px;
+    margin: 7% auto 0 auto;
     font-size: 18px;
     border-radius: 6px;
     padding: 20px;
@@ -141,26 +141,27 @@ input[type="text"]{
     vertical-align: top;
     border: none;
     padding: 0 10px 0 10px;
-    width: 760px;
+    width: 570px;
     height: 60px;
     font-size: 18px;
     line-height: 1;
     text-transform: uppercase;
     border-radius: 7px;
-    
     box-shadow: 0px 0px 7px -2px #242424;
 }
 
 button {
     cursor: pointer;
     background: transparent;
-    color: $corPadrao;
+    color: #fff ;
     text-transform: uppercase;
     font-size: 16px;
     border: none;
     vertical-align: top;
     width: 100px;
     height: 60px;
+    border-radius: 5px;
+    background: $corSecundaria;
 }
 
 #feedback {
