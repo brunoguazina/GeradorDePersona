@@ -1,6 +1,6 @@
 
 var pessoa = {}
-var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade"];
+var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "necessidades", "motivações", "expectativas"];
 var totalDeItens = itens.length;
 var i = 0;
 
@@ -46,15 +46,6 @@ var i = 0;
 		
 	});
 
-	function montarPersona(){
-         $(".nome").html("Some text and markup");
-      }
-
-	$( document ).ready(function() {
-        $(".nome").html("Bruno Guazina");
-        $(".profissao").html(pessoa.profissao);
-    });
-
 	function pegarValor(item) {
 		console.log(pessoa[item]);
 		$("#valorItens").val(pessoa[item]);
@@ -62,6 +53,7 @@ var i = 0;
 
 	function salvar(item){
 		pessoa[item] = $("#valorItens").val();
+		localStorage.setItem( "Pessoa" ,JSON.stringify(pessoa));
 	}
 
 	function tratarMensagem(item) {

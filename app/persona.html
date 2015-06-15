@@ -15,7 +15,13 @@
 
     <div class="conteudoPersona">
       <span class="nome"></span>
+      <span class="idade"></span>
       <span class="profissao"></span>
+      <span class="estadoCivil"></span>
+      <span class="escolaridade"></span>
+      <span class="necessidades"></span>
+      <span class="motivacoes"></span>
+      <span class="expectativas"></span>
     </div>
 
     <script>
@@ -28,6 +34,21 @@
     </script>
 
     <script src="scripts/main.js"></script>
+    <script>
+        function listarPessoa() {
+            pessoaDB = JSON.parse(localStorage.getItem("Pessoa"));
+
+            $(".nome").html(pessoaDB["nome"]);
+            $(".idade").html(pessoaDB["idade"]);
+            $(".profissao").html(pessoaDB["profissão"]);
+            $(".estadoCivil").html(pessoaDB["estado civil"]);
+            $(".escolaridade").html(pessoaDB["escolaridade"]);
+            $(".necessidades").html(pessoaDB["necessidades"]);
+            $(".motivacoes").html(pessoaDB["motivações"]);
+            $(".expectativas").html(pessoaDB["expectativas"]);
+        }
+        listarPessoa();
+    </script>
 
 </body>
 </html>

@@ -67,7 +67,7 @@ body {
     margin: 0;
     paddind: 0;
     background-image: url("../images/background.jpg");
-    background-size: 85%;
+    background-size: 70%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #555;
 }
@@ -202,6 +202,10 @@ button {
     height: 100%;
     margin: 0 auto;
     background: #FFF;
+
+    span {
+        display: block;
+    }
 }
 
 
