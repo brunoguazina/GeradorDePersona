@@ -14,14 +14,22 @@
   <body>
 
     <div class="conteudoPersona">
-      <span class="nome"></span>
-      <span class="idade"></span>
-      <span class="profissao"></span>
-      <span class="estadoCivil"></span>
-      <span class="escolaridade"></span>
-      <ul class="necessidades"></ul>
-      <ul class="motivacoes"></ul>
-      <ul class="expectativas"></ul>
+        <div class="fotografia">
+            <img src="" alt="" width="250">
+        </div>
+        <div class="perfil">
+            <span class="nome"></span>
+            <span class="idade"></span>
+            <span class="profissao"></span>
+            <span class="estadoCivil"></span>
+            <span class="escolaridade"></span>
+        </div>
+        <div class="frase">
+            <p>Donec rutrum congue leo eget malesuada. Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.</p>
+        </div>
+        <ul class="necessidades"></ul>
+        <ul class="motivacoes"></ul>
+        <ul class="expectativas"></ul>
     </div>
 
     <script>
@@ -45,15 +53,15 @@
             $(".escolaridade").html(pessoaDB["escolaridade"]);
             
             pessoaDB["necessidades"].split(";").map(function(necessidade){
-              $(".necessidades").append("<li>"+necessidade+"</li>");
+              $(".necessidades").append("<li>" + necessidade + "</li>");
             });
 
-            pessoaDB["motivações"].split(";").map(function(necessidade){
-              $(".motivacoes").append("<li>"+necessidade+"</li>");
+            pessoaDB["motivações"].split(";").map(function(motivacao){
+              $(".motivacoes").append("<li>" + motivacao + "</li>");
             });
 
-            pessoaDB["expectativas"].split(";").map(function(necessidade){
-              $(".expectativas").append("<li>"+necessidade+"</li>");
+            pessoaDB["expectativas"].split(";").map(function(expectativa){
+              $(".expectativas").append("<li>" + expectativa + "</li>");
             });
 
         }

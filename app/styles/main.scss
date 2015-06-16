@@ -208,6 +208,19 @@ button {
     }
 }
 
+.frase p {
+    font-size: 22px;
+    padding: 0 35px;
+    
+    &:before{
+        content:'"';
+        font-size: 38px;
+    }
+    &:after{
+        content:'"';
+        font-size: 38px;
+    }
+}
 
 
 
