@@ -1,12 +1,10 @@
-
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "necessidades", "motivações", "expectativas"];
 var totalDeItens = itens.length;
 var i = 0;
 
 (function(){
-	"use strict";
-		
+
 	$("#valorItens").focus();
 
 	$("#voltar").on('click', function() {
