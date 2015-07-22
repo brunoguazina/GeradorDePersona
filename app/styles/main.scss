@@ -211,6 +211,7 @@ button {
 .frase p {
     font-size: 22px;
     padding: 0 35px;
+    font-style: italic;
     
     &:before{
         content:'"';
@@ -222,7 +223,11 @@ button {
     }
 }
 
-
+.mensagemCondicao {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
 
 
 
