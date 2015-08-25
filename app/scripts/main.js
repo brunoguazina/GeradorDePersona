@@ -1,12 +1,10 @@
-
 var pessoa = {}
 var itens = ["nome", "idade", "profissão", "estado civil", "escolaridade", "necessidades", "motivações", "expectativas"];
 var totalDeItens = itens.length;
 var i = 0;
 
 (function(){
-	"use strict";
-		
+
 	$("#valorItens").focus();
 
 	$("#voltar").on('click', function() {
@@ -31,7 +29,10 @@ var i = 0;
 			$(".dialogo").show();
 			$(".nomePersona").empty().append(pessoa.nome + " - " + pessoa.profissão);
 		}
+
+		mensagemCondicional(itens[i]);
 		tratarMensagem(itens[i]);
+
 		$("#valorItens").val("");
 		status();
 		$("#valorItens").focus();
@@ -54,6 +55,14 @@ var i = 0;
 	function salvar(item){
 		pessoa[item] = $("#valorItens").val();
 		localStorage.setItem( "Pessoa" ,JSON.stringify(pessoa));
+	}
+
+	function mensagemCondicional(item) {
+
+		if(item == "necessidades" || item == "motivações" || item == "expectativas"){
+			console.log("haaaaa");
+			$("#campos .mensagemCondicao").show();
+		}
 	}
 
 	function tratarMensagem(item) {
